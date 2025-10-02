@@ -1,0 +1,5 @@
+package com.dominar01.demo.repository;
+
+public interface UnoRepositoryImpl {
+
+}

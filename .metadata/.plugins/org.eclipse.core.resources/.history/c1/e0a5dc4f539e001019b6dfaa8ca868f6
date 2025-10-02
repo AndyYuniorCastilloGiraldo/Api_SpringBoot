@@ -1,0 +1,10 @@
+package com.dominar01.demo.repository;
+
+import com.dominar01.demo.model.Uno;
+public class UnoRepositoryImpl implements unoRepository {
+
+    @Override
+    public Uno getUNoByid(int idUno) {
+        return new Uno(1, "Titulo Uno" );
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Dominar01Application<Dominar_01>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.dominar01.demo.Dominar01Application",
+            "projectName": "Dominar_01",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

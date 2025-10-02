@@ -1,0 +1,17 @@
+package com.dominar01.demo.Service;
+
+import com.dominar01.demo.model.Uno;
+import com.dominar01.demo.repository.unoRepository;
+
+public class UnoServiceImpl implements UnoService{
+    
+    private unoRepository repo;
+    @Override
+    public Uno validAndReturn(int idUno) {
+        if ( idUno > 0 ) {
+            return repo.getUNoByid(idUno);
+        } else {
+            return new Uno(0, "No existe");
+        }
+    }
+}

@@ -1,0 +1,18 @@
+package com.dominar01.demo.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import com.dominar01.demo.model.Uno;
+
+@RestController
+@RequestMapping("/v1/uno")
+public class Uno {
+
+	@GetMapping
+	public Uno getUno() {
+		return new Uno(1, "Mi primer Uno");
+	}
+}

@@ -1,0 +1,15 @@
+package com.dominar01.demo.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@jacksonXmlRootElement
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class UNo {
+
+	private int idUno;
+	private String Title;
+}

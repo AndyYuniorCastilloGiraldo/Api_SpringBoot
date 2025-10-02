@@ -1,0 +1,8 @@
+package com.dominar01.demo.repository;
+
+import com.dominar01.demo.model.Uno;
+public interface unoRepository {
+    
+
+    Uno getUNoByid(int idUno);  
+}

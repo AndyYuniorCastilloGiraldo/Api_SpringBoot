@@ -1,0 +1,8 @@
+package com.dominar01.demo.Service;
+
+import com.dominar01.demo.model.Uno;
+
+public interface UnoService {
+
+    Uno validAndReturn(int idUno);
+}
