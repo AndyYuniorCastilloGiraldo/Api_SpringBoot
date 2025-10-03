@@ -13,4 +13,5 @@ public interface BookService  {
     Book findById(Integer id);
     void delete(Integer id);
     Book BUscarPorTitulo(String title);
+    int contarPorAutor(String author);
 }

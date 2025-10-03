@@ -19,15 +19,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
 @RestController
 @RequestMapping("/api/Book")
 
 public class BookController {
 
 	@Autowired
-	private  BookService service;
-
+	private BookService service;
 
 	@GetMapping
 	public ResponseEntity<List<Book>> getBooks() {
@@ -36,32 +34,40 @@ public class BookController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Book> getBook( @PathVariable ("id") Integer id) {
+	public ResponseEntity<Book> getBook(@PathVariable("id") Integer id) {
 		Book book = service.findById(id);
 		return ResponseEntity.ok(book);
 	}
+
 	@PostMapping
 	public ResponseEntity<Book> createBook(@RequestBody Book books) {
 		Book newBook = service.guardar(books);
 		return ResponseEntity.status(HttpStatus.CREATED).body(newBook);
 	}
+
 	@PutMapping("/{id}")
-	public ResponseEntity<Book> updateBook( @PathVariable("id") Integer id, @RequestBody Book books) {
+	public ResponseEntity<Book> updateBook(@PathVariable("id") Integer id, @RequestBody Book books) {
 		Book newBook = service.actualizar(id, books);
 		return ResponseEntity.ok(newBook);
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteBook( @PathVariable ("id") Integer id) {
-		//service = new BookServiceImpl();
+	public ResponseEntity<Void> deleteBook(@PathVariable("id") Integer id) {
+		// service = new BookServiceImpl();
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
 
 	@GetMapping("/title/{title}")
-	public ResponseEntity<Book> getBookByTitle( @PathVariable ("title") String title) {
+	public ResponseEntity<Book> getBookByTitle(@PathVariable("title") String title) {
 		Book book = service.BUscarPorTitulo(title);
 		return ResponseEntity.ok(book);
+	}
+
+	@GetMapping("/count/{author}")
+	public ResponseEntity<Integer> contarPorAutor(@PathVariable String author) {
+		int cantidad = service.contarPorAutor(author);
+		return ResponseEntity.ok(cantidad);
 	}
 
 }

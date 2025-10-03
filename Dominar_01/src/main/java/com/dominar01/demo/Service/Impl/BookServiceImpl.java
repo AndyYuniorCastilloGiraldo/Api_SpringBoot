@@ -45,5 +45,10 @@ public class BookServiceImpl implements BookService {
     public Book BUscarPorTitulo(String title) {
         return repo.findByTitle(title);
     }
+
+    @Override
+    public int contarPorAutor(String author) {
+        return repo.countByAuthor(author);
+    }
     
 }
