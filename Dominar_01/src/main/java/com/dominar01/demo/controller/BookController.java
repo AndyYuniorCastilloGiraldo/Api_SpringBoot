@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dominar01.demo.Service.BookService;
 import com.dominar01.demo.model.Book;
 
-//import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/Book")
@@ -70,4 +70,9 @@ public class BookController {
 		return ResponseEntity.ok(cantidad);
 	}
 
+	@GetMapping("/listTop10")
+	public List<Book> getTop10Books() {
+		return service.getTop10Books();
+	
+}
 }

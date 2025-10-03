@@ -14,4 +14,6 @@ public interface BookService  {
     void delete(Integer id);
     Book BUscarPorTitulo(String title);
     int contarPorAutor(String author);
+    List<Book> getTop10Books();
+
 }

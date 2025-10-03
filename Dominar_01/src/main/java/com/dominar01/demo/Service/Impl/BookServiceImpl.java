@@ -51,4 +51,8 @@ public class BookServiceImpl implements BookService {
         return repo.countByAuthor(author);
     }
     
+    @Override
+    public List<Book> getTop10Books() {
+        return repo.getTop10Books();
+    }
 }
