@@ -4,8 +4,6 @@ package com.dominar01.demo.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,13 +17,12 @@ public class Book {
 	@Id
 	private Integer idBook;
 	
-	@Column(name = "book_title", length = 50, nullable = false)
+	@Column(name = "Titulo", length = 50, nullable = false)
 	private String title;
 
-	@ManyToOne
-	@JoinColumn(name = "id_category", nullable = false)
-	private Category category;
+	@Column(name = "Autor", length = 50, nullable = false)
+	private String author;
 
-	@Column(name = "book_enabled")
-	private boolean enabled;
+	@Column(name = "Precio", nullable = false)
+	private double precio;
 }

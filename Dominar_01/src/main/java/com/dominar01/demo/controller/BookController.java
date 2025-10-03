@@ -2,6 +2,7 @@ package com.dominar01.demo.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,30 +14,29 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dominar01.demo.Service.BookService;
 import com.dominar01.demo.model.Book;
 
-import lombok.RequiredArgsConstructor;
+//import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/v1/Book")
-@RequiredArgsConstructor
+@RequestMapping("/api/Book")
+
 public class BookController {
 
-	private final BookService service;
+	@Autowired
+	private  BookService service;
 
 
 	@GetMapping
 	public ResponseEntity<List<Book>> getBooks() {
-		//service = new BookServiceImpl();
 		List<Book> list = service.findAll();
 		return ResponseEntity.ok(list);
 	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<Book> getBook( @PathVariable ("id") Integer id) {
-		//service = new BookServiceImpl();
 		Book book = service.findById(id);
 		return ResponseEntity.ok(book);
 	}
@@ -56,6 +56,12 @@ public class BookController {
 		//service = new BookServiceImpl();
 		service.delete(id);
 		return ResponseEntity.noContent().build();
+	}
+
+	@GetMapping("/title/{title}")
+	public ResponseEntity<Book> getBookByTitle( @PathVariable ("title") String title) {
+		Book book = service.BUscarPorTitulo(title);
+		return ResponseEntity.ok(book);
 	}
 
 
