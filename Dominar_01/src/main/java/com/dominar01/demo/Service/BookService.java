@@ -3,7 +3,6 @@ package com.dominar01.demo.Service;
 import java.util.List;
 
 import com.dominar01.demo.model.Book;
-//import com.dominar01.demo.repository.BookRepo;
 
 public interface BookService  {
     

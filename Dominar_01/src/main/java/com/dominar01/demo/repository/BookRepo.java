@@ -16,6 +16,5 @@ Spring crea por detrás una clase que implementa BookRepo.
 Esa clase sabe cómo conectarse a la base de datos y ejecutar la consulta equivalente a:
 SELECT * FROM book WHERE title = ?; */
     Book findByTitle(String title);
-
     
 }

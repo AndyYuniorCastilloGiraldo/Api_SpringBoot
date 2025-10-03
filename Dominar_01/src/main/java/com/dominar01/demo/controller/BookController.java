@@ -64,27 +64,4 @@ public class BookController {
 		return ResponseEntity.ok(book);
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-	//private String text;
-	
-	/*public BookController(BookService service) {
-		this.service = service;
-	}
-
-	@GetMapping
-	public Book getBook() {
-		//service = new BookServiceImpl();
-		return service.validAndReturnBook(1);
-	}*/
-
 }
